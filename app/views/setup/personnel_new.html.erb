@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Personnel Creation Form</title>
+        <style>
+                body {
+                        background-color: #121212;
+                        /* Dark background */
+                        color: #e0e0e0;
+                        /* Light text for contrast */
+                        font-family: Arial, sans-serif;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100vh;
+                        margin: 0;
+                }
+
+                form {
+                        background-color: #333333;
+                        /* Slightly lighter dark shade for form */
+                        padding: 20px;
+                        border-radius: 8px;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                        width: 500px;
+                }
+
+                .form-group {
+                        margin-bottom: 15px;
+                        text-align: left;
+                }
+
+                label {
+                        margin: 0 2.5% 10px 2.5%;
+                        display: block;
+                        margin-bottom: 5px;
+                }
+
+                input[type="text"],
+                input[type="email"],
+                input[type="password"] {
+                        width: 90%;
+                        padding: 10px;
+                        margin: 0 2.5% 10px 2.5%;
+                        border-radius: 4px;
+                        border: none;
+                        background-color: #222;
+                        color: #e0e0e0;
+                }
+
+                .submit-btn {
+                        display: block;
+                        width: 30%;
+                        padding: 10px;
+                        border-radius: 4px;
+                        border: none;
+                        background-color: #007bff;
+                        /* Blue button */
+                        color: white;
+                        cursor: pointer;
+                        margin: 10px 2.5% 10px 2.5%;
+                }
+
+                .submit-btn:hover {
+                        background-color: #0056b3;
+                        /* Darker blue on hover */
+                }
+
+                /* Additional styles for alignment */
+                .form-group:last-child {
+                        text-align: center;
+                }
+        </style>
+</head>
+
+<body>
+        <form action="personnel_create" method="post">
+                <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                        <input type="submit" value="Sign Up" class="submit-btn">
+                </div>
+        </form>
+</body>
+
+</html>

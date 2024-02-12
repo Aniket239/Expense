@@ -1,0 +1,62 @@
+<style>
+/* General styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Very dark grey, almost black */
+    color: #E0E0E0; /* Light grey for readable text */
+    margin: 0;
+    padding: 20px;
+  }
+  
+  /* Header styling */
+  .header {
+    text-align: center;
+    font-size: 30px;
+    color: #FF4500; /* Deep orange for a vibrant header */
+    margin-bottom: 30px; /* More spacing below the header */
+  }
+  
+  /* List styling */
+  .menu-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+  }
+  
+  /* List item styling */
+  .menu-item {
+    margin: 20px;
+    background-color: #333333; /* Dark grey for item background */
+    border-radius: 10px; /* Slightly larger rounded corners */
+    transition: transform 0.3s ease; /* Smooth scaling on hover */
+  }
+  
+  .menu-item:hover {
+    transform: scale(1.1); /* More pronounced scale effect on hover */
+  }
+  
+  /* Link styling */
+  .menu-link {
+    display: block;
+    text-decoration: none;
+    color: #FFFFFF; /* White text for high contrast */
+    font-size: 22px;
+    padding: 15px 30px; /* Increased padding for a bigger click area */
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .menu-link:hover {
+    color: #FF4500; /* Deep orange text on hover for a vibrant effect */
+    background-color: #444444; /* Slightly lighter grey for the background on hover */
+  }
+  
+  </style>
+  
+  <h1 class="header">Setup#index</h1>
+  <ul class="menu-list">
+      <li class="menu-item"><%= link_to "Login", setup_personnel_login_url, class: "menu-link" %></li>
+      <li class="menu-item"><%= link_to "Personnels", setup_personnel_index_url, class: "menu-link" %></li>
+  </ul>
+  

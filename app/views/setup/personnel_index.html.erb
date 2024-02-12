@@ -1,0 +1,118 @@
+<style>
+/* Page container styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #121212;
+  /* Deep dark background */
+  color: #e0e0e0;
+  /* Light grey text for readability */
+  margin: 0;
+  padding: 20px 0;
+  /* Padding to prevent content from sticking to the edges */
+}
+.page-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0; /* Light grey for contrast with deep colors */
+  }
+  
+  /* Heading styling */
+  h1 {
+    color: white; /* Deep dark blue for heading */
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Table styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #1e1e1e;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+  }
+  
+  th {
+    background-color: #273849; /* Darker shade for headers */
+    color: #ffffff;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #2a2a2a;
+  }
+  
+  .edit-link,
+  .delete-link {
+    text-decoration: none;
+    color: #4CAF50;
+    /* Green for edit links for accessibility */
+    margin-right: 10px;
+  }
+
+  .delete-link {
+    color: #F44336;
+    /* Red for delete links for caution */
+  }
+
+  .edit-link:hover,
+  .delete-link:hover {
+    text-decoration: underline;
+  }
+  .buttons{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  
+  /* New Personnel link styling */
+  .new-personnel-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    background-color: #0056b3; /* Deep blue for primary actions */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .new-personnel-link:hover {
+    background-color: #004494; /* Even deeper blue on hover */
+  }
+  </style>
+  
+
+<h1>Users</h1><br>
+<table>
+    <thead>
+        <th>Name</th>
+        <th>User Id</th>
+        <th></th>
+        <th></th>
+    </thead>
+    <tbody>
+        <% @personnels.each do |personnel| %>
+            <tr>
+                <td><%= personnel.name %></td>
+                <td><%= personnel.email %></td>
+                <td><%= link_to "Edit", setup_personnel_edit_path(personnel), class: "edit-link" %></td>
+                <td><%= link_to "Delete", setup_personnel_destroy_path(personnel), class: "delete-link" %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table><br>
+<div class="buttons">
+<%= link_to "Sign Up", setup_personnel_new_url, class: "new-personnel-link" %>
+<%= link_to "Login", setup_personnel_login_url, class: "new-personnel-link" %>
+</div>

@@ -1,0 +1,68 @@
+<style>
+/* Dark theme base */
+body {
+        background-color: #121212; /* Dark background */
+        color: #E0E0E0; /* Light text for contrast */
+        font-family: Arial, sans-serif;
+      }
+      
+      /* Form container styling */
+      .form-container {
+        width: 40%;
+        margin: 50px auto; /* Center the form vertically and horizontally */
+        padding: 20px;
+        background-color: #333; /* Darker form background */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      }
+      
+      /* Styling adjustments for text inputs */
+      input[type="text"], input[type="number"] {
+        width: calc(100% - 20px); /* Adjust width to account for padding */
+        padding: 10px;
+        margin: 10px 0;
+        border: 2px solid #555; /* Deeper border color */
+        background-color: #222; /* Dark input fields */
+        color: #ddd; /* Light text color for inputs */
+        border-radius: 5px;
+      }
+      
+      /* Enhance submit button with a more vibrant, manly color */
+      input[type="submit"] {
+        width: 40%; /* Make the button wider */
+        background-color: #007bff; /* Deep blue */
+        color: #fff;
+        padding: 12px 20px;
+        margin-top: 20px; /* Additional spacing above the submit button */
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      
+      input[type="submit"]:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+      }
+      
+      /* Center elements within the form */
+      input[type="text"], input[type="number"], input[type="submit"] {
+        display: block; /* Make inputs block level for full-width */
+        margin: 10px auto; /* Centering */
+      }
+      
+      /* Placeholder adjustments - if needed, you must manually adjust the placeholder text within your Rails form helpers */
+      ::placeholder {
+        color: #bbb; /* Lighter placeholder text for better contrast */
+      }
+      
+      </style>
+      <div class="form-container">
+      <%= form_tag "expense_create" do %>
+      <h3> Add Your Expense: <%= @current_personnel.name %></h3>
+      <label>Item Name</label>
+      <%= text_field_tag "item", "", placeholder: "Add Item Name" , required:true %><br>
+      <label>Amount</label>
+      <%= text_field_tag "amount", "", type: "number", placeholder: "Add Amount", required:true %><br>
+      <label>Remarks</label>
+      <%= text_field_tag "remarks", "", placeholder: "Add Your Remarks..." , required:true %><br>
+      <%= submit_tag "Create Expense" %>
+    <% end %>
+</div>

@@ -1,0 +1,80 @@
+<style>
+/* Overall background and form container styling for dark theme */
+body {
+        background-color: #121212; /* Dark background for the body */
+        color: #ffffff; /* Light color text */
+        font-family: Arial, sans-serif; /* Ensuring readability */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Full height of the viewport */
+      }
+      
+      .form-container {
+        width: 40%;
+        padding: 20px;
+        background-color: #333333; /* Darker shade for the form background */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        border-radius: 8px; /* Added for slightly rounded corners */
+      }
+      
+      /* Styling for form elements to ensure alignment */
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      /* Label styling */
+      label {
+        margin:0 3.5% ;
+        align-self: flex-start;
+        margin-bottom: 5px; /* Space between label and input field */
+      }
+      
+      /* Input field styling adjusted for dark theme */
+      .input-field {
+        width: 90%; /* Adjusted width for alignment */
+        padding: 10px;
+        margin: 5px 0 15px; /* Adjusted spacing */
+        background-color: #222;
+        border: 1px solid #555;
+        color: #ddd;
+        border-radius: 5px;
+      }
+      
+      /* Placeholder styling for better visibility */
+      ::placeholder {
+        color: #bbb;
+      }
+      
+      /* Adjustments to the submit button for alignment and style */
+      .submit-button {
+        margin-top: 10px; /* Space above the button */
+        width: 20%; /* Button width for centering */
+        background-color: #0066cc; /* Deep blue for the button */
+        color: #fff;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      
+      .submit-button:hover {
+        background-color: #004499; /* Darker shade of blue on hover */
+      }
+      
+      </style>
+      <div class="form-container">
+        <form action="personnel_login" method="post">
+          <h2>LOGIN</h2>
+          <label for="email">Email</label>
+          <input type="text" id="email" name="email" class="input-field" placeholder="Email Address" required>
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" class="input-field" placeholder="Password" required>
+          <input type="submit" value="Login" class="submit-button">
+        </form>
+      </div>
+      
+      

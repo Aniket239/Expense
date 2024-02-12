@@ -1,0 +1,79 @@
+<style>
+/* General body styling */
+body {
+    background-color: #121212; /* Dark background */
+    color: #fff; /* Light text color for contrast */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Full viewport height */
+  }
+  
+  /* Form container styling */
+  .form-container {
+    width: 50%;
+    padding: 20px;
+    background-color: #333; /* Darker background for the form */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 8px; /* Rounded corners */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Label styling */
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #bbb; /* Lighter text color for labels */
+  }
+  
+  /* Input field styling */
+  .form-input {
+    width: calc(100% - 20px); /* Adjust width for padding */
+    padding: 10px;
+    margin-bottom: 20px; /* Increased space between fields */
+    border: 2px solid #555; /* Darker border */
+    background-color: #222; /* Dark background for input */
+    color: #ddd; /* Light text color */
+    border-radius: 5px;
+  }
+  
+  .form-input:focus {
+    border-color: #007bff; /* Highlight input field on focus */
+  }
+  
+  /* Submit button styling */
+  .form-submit {
+    display: block; /* Center the button */
+    width: 100%;
+    max-width: 200px; /* Maximum width for the button */
+    margin: 0 auto 10px; /* Centering the button */
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form-submit:hover {
+    background-color: #0056b3;
+  }
+  
+  </style>
+  
+  <div class="form-container">
+    <%= form_tag "personnel_update" do %>
+      <%= hidden_field_tag "personnel_id", @personnel.id %>
+      <label for="name">Name:</label>
+      <%= text_field_tag "name", @personnel.name, class: "form-input", id: "name" %><br>
+      <label for="email">Email:</label>
+      <%= text_field_tag "email", @personnel.email, class: "form-input", id: "email" %><br>
+      <label for="password">Password:</label>
+      <%= text_field_tag "password", @personnel.password, class: "form-input", id: "password" %><br>
+      <%= submit_tag "Edit Personnel", class: "form-submit" %>
+    <% end %>
+  </div>
+  

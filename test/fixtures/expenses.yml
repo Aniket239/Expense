@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  personnel_id: 1
+  amount: 9.99
+  item: MyString
+  remarks: MyText
+
+two:
+  personnel_id: 1
+  amount: 9.99
+  item: MyString
+  remarks: MyText

@@ -1,0 +1,58 @@
+<style>
+/* Navbar styling */
+.navbar {
+    background-color: #333; /* Dark grey navbar background */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Adjust padding as needed */
+  }
+  
+  .navbar-logo {
+    color: #ff7f00; /* Orange navbar brand color */
+    text-decoration: none; /* Remove underline */
+    font-size: 24px; /* Adjust font size */
+  }
+  
+  .navbar-items ul {
+    list-style-type: none; /* Remove bullet points */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-items ul li {
+    display: inline-block; /* Display list items horizontally */
+    margin-right: 20px; /* Adjust spacing between items */
+  }
+  
+  .navbar-custom-nav-link {
+    color: #fff; /* White navbar link text */
+    text-decoration: none; /* Remove underline */
+    font-size: 18px; /* Adjust font size */
+  }
+  
+  .navbar-custom-nav-link:hover {
+    color: #e65c00; /* Darker orange on hover */
+  }
+  
+</style>
+<nav class="navbar">
+    <%= link_to "Expense", setup_index_url, class: "navbar-logo" %>
+    <div class="navbar-items" id="navbarNav">
+      <ul>
+        <li class="nav-item">
+          <%= link_to "Home", setup_index_url, class: "navbar-custom-nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Setup", setup_personnel_index_url, class: "navbar-custom-nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Transaction", transaction_expense_index_url, class: "navbar-custom-nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Log Out", setup_personnel_login_url, class: "navbar-custom-nav-link" %>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  

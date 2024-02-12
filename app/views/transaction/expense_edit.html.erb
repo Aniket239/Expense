@@ -1,0 +1,81 @@
+<style>
+    /* General styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a; /* Dark background color */
+    color: #fff; /* Light text color for contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+  }
+  
+  /* Form container */
+  .form-container {
+    background-color: #333; /* Dark grey background for form */
+    padding: 30px;
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+  }
+  
+  /* Form input styling */
+  input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #444; /* Darker grey background for inputs */
+    color: #fff;
+    box-sizing: border-box; /* Include padding in width calculation */
+  }
+  
+  /* Submit button styling */
+  input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4caf50; /* Green color for submit button */
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
+  /* Label styling */
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  /* Center align text */
+  .text-center {
+    text-align: center;
+  }
+  
+</style>
+
+<%= form_tag "expense_update", class: "form-container" do %>
+  <%= hidden_field_tag "expense_id", @expense.id %>
+  <% if @current_personnel %>
+    <p class="text-center">Hey <%= @current_personnel.name %></p><br/>
+  <% else %>
+    <p class="text-center">Hey there!</p>
+  <% end %>
+  <label for="item">Item:</label>
+  <%= text_field_tag "item", @expense.item, placeholder: "Enter item" %><br>
+  <label for="amount">Amount:</label>
+  <%= text_field_tag "amount", @expense.amount, placeholder: "Enter amount" %><br>
+  <label for="remarks">Remarks:</label>
+  <%= text_field_tag "remarks", @expense.remarks, placeholder: "Enter remarks" %><br>
+  <%= submit_tag "Edit Expense", class: "text-center" %>
+<% end %>
